@@ -10,21 +10,27 @@ const [entrance, checkin] = buttons;
 
 
 function register(){
-  const xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   const formData = new FormData(signUp);
-  xhr.open('POST', 'https://neto-api.herokuapp.com/signup');
+  xhr.open('POST', 'https://neto-api.herokuapp.com/signup', false);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(formData);
+  xhr.send(JSON.stringify(formData));
+  
+  xhr.open("POST", 'https://neto-api.herokuapp.com/signup', false);
+  xhr.send();
+  console.log(`Ответ от сервера: ${xhr.responseText}`);
   
 }
 function enter(){
-  const xhr1 = new XMLHttpRequest();
+  let xhr1 = new XMLHttpRequest();
   const formData1 = new FormData(signIn);
-  xhr1.open('POST', 'https://neto-api.herokuapp.com/signin');
+  xhr1.open('POST', 'https://neto-api.herokuapp.com/signin', false);
   xhr1.setRequestHeader('Content-Type', 'application/json');
-  xhr1.send(formData1);
+  xhr1.send(JSON.stringify(formData1));
  
-
+  xhr1.open("POST", 'https://neto-api.herokuapp.com/signin', false);
+  xhr1.send();
+  console.log(`Ответ от сервера: ${xhr1.responseText}`);
   
 }
 function buttonHandler(event) {
@@ -42,7 +48,6 @@ function buttonHandler(event) {
 	 
 	 value.addEventListener('click', buttonHandler)
  })
-
 
 
 
