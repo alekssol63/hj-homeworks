@@ -1,4 +1,5 @@
 'use strict';
+
 const itemsList = document.querySelector('.items-list');
 function handler(event) {
   const button = event.target;
