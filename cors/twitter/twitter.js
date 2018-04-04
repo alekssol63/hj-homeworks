@@ -12,23 +12,23 @@ function randName() {
 }
 
 function show(user) {
-	for(let element of container) {
-	  if (element.hasAttribute('data-wallpaper')) {
-	    element.src = user.wallpaper;
-	  } else if (element.hasAttribute('data-username')) {
-	    element.innerText = user.username;
-	  } else if	(element.hasAttribute('data-description')) {
-	    element.innerText = user.description;
-	  } else if	(element.hasAttribute('data-pic')) {
-	    element.src = user.pic;
-	  } else if	(element.hasAttribute('data-tweets')) {
-	    element.innerText = user.tweets;
-	  } else if	(element.hasAttribute('data-followers')) {
-	    element.innerText = user.followers;
-	  } else if	(element.hasAttribute('data-following')) {
-	    element.innerText = user.following;
-	  } 
-    }
+  for(let element of container) {
+    if (element.hasAttribute('data-wallpaper')) {
+      element.src = user.wallpaper;
+    } else if (element.hasAttribute('data-username')) {
+      element.innerText = user.username;
+    } else if (element.hasAttribute('data-description')) {
+      element.innerText = user.description;
+    } else if (element.hasAttribute('data-pic')) {
+      element.src = user.pic;
+    } else if (element.hasAttribute('data-tweets')) {
+      element.innerText = user.tweets;
+    } else if (element.hasAttribute('data-followers')) {
+      element.innerText = user.followers;
+    } else if (element.hasAttribute('data-following')) {
+      element.innerText = user.following;
+    } 
+  }
 }
 
 function loadData(url) {
@@ -38,10 +38,8 @@ return new Promise((done, fail) => {
 window[functionName] = done;
 const script = document.scripts[0].cloneNode();
 
-
 script.src = "script.src = `${url}?jsonp=${functionName}`";
 document.body.appendChild(script);
-
 
 });
 }
