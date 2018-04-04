@@ -38,7 +38,7 @@ return new Promise((done, fail) => {
 window[functionName] = done;
 const script = document.scripts[0].cloneNode();
 
-script.src = "script.src = `${url}?jsonp=${functionName}`";
+script.src = `${url}?jsonp=${functionName}`;
 document.body.appendChild(script);
 
 });
